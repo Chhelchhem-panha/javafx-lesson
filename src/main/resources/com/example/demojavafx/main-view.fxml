@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demojavafx.controller.MainController"
+      fx:id="vBoxRoot"
+>
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="37.0666534423828" minHeight="20.0" prefHeight="37.0666534423828" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="42.400000000000006" minHeight="10.0" prefHeight="30.666656494140625" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="26.93334350585937" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+        <Label text="ID" />
+        <Label text="Fist Name" GridPane.rowIndex="1" />
+        <Label text="Last Name" GridPane.rowIndex="2" />
+        <Label text="Address" GridPane.rowIndex="3" />
+        <JFXTextField fx:id="txtId" GridPane.columnIndex="1" />
+        <JFXTextField fx:id="txtFistName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <JFXTextField fx:id="txtLastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <JFXTextArea fx:id="txtAddress" prefHeight="47.0" prefWidth="445.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <HBox prefHeight="35.0" prefWidth="442.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <JFXComboBox fx:id="comboDepartment" prefHeight="26.0" prefWidth="200.0" />
+            <JFXButton onAction="#callDepartmentView" prefHeight="26.0" prefWidth="38.0" text="..." />
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <JFXButton fx:id="btnSave" onAction="#saveAction" text="_Save" />
+            <JFXButton onAction="#resetAction" text="_Reset" />
+            <JFXButton fx:id="btnUpdate" onAction="#updateAction" text="_Update" />
+        </HBox>
+        <Label text="Department" GridPane.rowIndex="4" />
+    </GridPane>
+    <TableView fx:id="tableStudent" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+      <columns>
+          <TableColumn fx:id="col01" prefWidth="137.60001629590988" text="ID" />
+          <TableColumn fx:id="col02" prefWidth="218.39999389648438" text="Name" />
+          <TableColumn fx:id="col03" prefWidth="238.39996337890625" text="Department" />
+      </columns>
+    </TableView>
+</VBox>
